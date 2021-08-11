@@ -136,7 +136,7 @@ li{
     transition: all 0.3s;
     transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
 
-    font-size: 14px;
+    font-size: 16px;
     background-color: var(--light-layer-0);
     color: var(--dark-layer-1);
 }
@@ -157,6 +157,9 @@ li{
     text-transform: capitalize;
     /* border-radius: 15px; */
     /* overflow: hidden; */
+
+    -webkit-user-select: none;
+    user-select: none;
 
 }
 
