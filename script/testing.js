@@ -1,5 +1,10 @@
 fetchedRoutes = null
 
+function load() {
+    getRouteList()
+}
+
+
 function getRouteList() {
     // var stop1 = "466111DE1A3E4656"
     // var route = "961"
@@ -20,6 +25,24 @@ function getRouteList() {
             fetchedRoutes = data
             routeListProcess(fetchedRoutes)
         })
+}
+
+function routeFilter() {
+    var filter = document.getElementById('filterInput').value.toUpperCase()
+    var buses = document.getElementById('buses')
+    var li = buses.getElementsByTagName('li')
+    console.log(li)
+
+
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "initial";
+        } else {
+            li[i].style.display = "none";
+        }
+  }
 }
 
 function routeListProcess(fetchedRoutes) {
@@ -51,9 +74,9 @@ function routeListProcess(fetchedRoutes) {
 
     for (i = 0; i < dataLength; i++) {
         if (routesHTML) {
-            routesHTML = `${routesHTML}<div class="line"></div><a class="bus-card" onclick="routePage('${routeAll[i]}','${boundName[i]}','${boundAll[i]}','${serviceAll[i]}','${destAll[i]}')"><div class="bus-no-container"><div class="bus-no">${routeAll[i]}</div></div><div class="bus-info"><div class="bus-dest">${destAll[i]}</div></div></a>`
+            routesHTML = `${routesHTML}<li><div class="line"></div><a class="bus-card" onclick="routePage('${routeAll[i]}','${boundName[i]}','${boundAll[i]}','${serviceAll[i]}','${destAll[i]}')"><div class="bus-no-container"><div class="bus-no">${routeAll[i]}</div></div><div class="bus-info"><div class="bus-dest">${destAll[i]}</div></div></a></li>`
         } else {
-            var routesHTML = `<a class="bus-card" onclick="routePage('${routeAll[i]}','${boundName[i]}','${boundAll[i]}','${serviceAll[i]}','${destAll[i]}')"><div class="bus-no-container"><div class="bus-no">${routeAll[i]}</div></div><div class="bus-info"><div class="bus-dest">${destAll[i]}</div></div></a>`
+            var routesHTML = `<li><a class="bus-card" onclick="routePage('${routeAll[i]}','${boundName[i]}','${boundAll[i]}','${serviceAll[i]}','${destAll[i]}')"><div class="bus-no-container"><div class="bus-no">${routeAll[i]}</div></div><div class="bus-info"><div class="bus-dest">${destAll[i]}</div></div></a></li>`
         }
     }
 
