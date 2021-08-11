@@ -212,8 +212,8 @@ li{
     align-items: center;
     justify-content: center;
 
-    min-height: 40px;
-    min-width: 40px;
+    min-height: 35px;
+    min-width: 35px;
     border-radius: 100%;
 
     background-color: var(--red-light);
@@ -230,12 +230,12 @@ li{
 
     border-radius: 5px;
 
-    padding: 3px;
+    padding: 2px;
     color: var(--dark-layer-1);
     background-color: var(--white-100);
     width: 100%;
 
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
 }
 
