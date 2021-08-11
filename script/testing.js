@@ -89,8 +89,8 @@ function routeListProcess(fetchedRoutes) {
 // }
 
 function routePage(route, direction, bound, service_type, dest) {
-    document.getElementById("buses").innerHTML = '<a class="bus-card">Loading...</a>'
-
+    var stopsHTML = `<a class="bus-card" onclick="getRouteList()"><div class="bus-no-container"><div class="bus-no">${route}</div></div><div class="bus-info"><div class="bus-dest">${dest}</div></div></a>`
+    document.getElementById("buses").innerHTML = stopsHTML + '<div class="line"></div><a class="bus-card">Loading...</a>'
 
     var api = `https://data.etabus.gov.hk/v1/transport/kmb/route-stop/${route}/${direction}/${service_type}`;
 
@@ -139,6 +139,9 @@ async function stopListProcess(fetchedStops, route, service_type, bound, dest) {
     }
 
     // console.log(stopName)
+
+    var stopsHTML = `<a class="bus-card" onclick="getRouteList()"><div class="bus-no-container"><div class="bus-no">${route}</div></div><div class="bus-info"><div class="bus-dest">${dest}</div></div></a>`
+    document.getElementById("buses").innerHTML = stopsHTML + '<div class="line"></div><a class="bus-card">Loading...</a>'
 
     for (i = 0; i < dataLength; i++) {
         var api = `https://data.etabus.gov.hk/v1/transport/kmb/eta/${stopAll[i]}/${route}/${service_type}`;
@@ -193,11 +196,10 @@ async function stopListProcess(fetchedStops, route, service_type, bound, dest) {
 
 
 
-    var stopsHTML = `<a class="bus-card" onclick="getRouteList()"><div class="bus-no-container"><div class="bus-no">${route}</div></div><div class="bus-info"><div class="bus-dest">${dest}</div></div></a>`
-
+    
 
     for (i = 0; i < dataLength; i++) {
-        stopsHTML = `${stopsHTML}<div class="line"></div><a class="bus-card"><div class="stop-name">${stopName[i]}</div><div class="spacer-x"></div><div class="eta">${eta1All[i]}</div></a>`
+        stopsHTML = `${stopsHTML}<li><div class="line"></div><a class="bus-card"><div class="stop-name">${stopName[i]}</div><div class="spacer-x"></div><div class="eta">${eta1All[i]}</div></a></li>`
     }
 
     document.getElementById("buses").innerHTML = stopsHTML
