@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Bus ETA</title>
+</head>
+
+<body onload="getRouteList()">
+<!-- <body> -->
+  <div class="main">
+    <div id="buses" class="bus-card-all">
+      <a class="bus-card" onclick="getRouteList()">
+        <div class="bus-no-container"><div class="bus-no">1</div></div>
+      </a>
+      <a class="bus-card">
+        <div class="stop-name">
+          Queen Mary
+        </div>
+        <div class="spacer-x"></div>
+        <div class="eta">33</div>
+      </a><div class="line"></div>
+      <!-- <a class="bus-card">Loading...</a> -->
+    </div>
+  </div>
+
+  <script src="script/testing.js"></script>
+</body>
+</html>

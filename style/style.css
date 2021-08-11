@@ -1,0 +1,252 @@
+:root{
+    --dark-layer-0: #000;
+    --dark-layer-1: #1c1c1e;
+    --dark-layer-2: #2c2c2e;
+    --dark-layer-3: #3a3a3c;
+
+    --light-layer-0: #fff;
+    --light-layer-1: #f2f2f7;
+    --light-layer-2: #e5e5ea;
+    --light-layer-3: #d1d1d6;
+
+    --light-layer-1-80: #f2f2f7cc;
+    --light-layer-1-60: #f2f2f799;
+    --light-layer-1-40: #f2f2f766;
+    --light-layer-1-20: #f2f2f733;
+
+    --dark-layer-1-80: #1c1c1ecc;
+    --dark-layer-1-60: #1c1c1e99;
+    --dark-layer-1-40: #1c1c1e66;
+    --dark-layer-1-20: #1c1c1e33;
+
+    --black-100: #000;
+    --white-100: #fff;
+
+    --black-80: #000000cc;
+    --white-80: #ffffffcc;
+
+    --black-60: #00000099;
+    --white-60: #ffffff99;
+
+    --black-40: #00000066;
+    --white-40: #ffffff66;
+
+    --black-20: #00000033;
+    --white-20: #ffffff33;
+
+    --black-10: rgba(0, 0, 0, 0.1);
+    --white-10: rgba(255, 255, 255, 0.1);
+
+
+
+    --blue-dark: rgb(10, 132, 255);
+    --blue-light: rgb(0, 122, 255);
+
+    --brown-dark: rgb(172, 142, 104);
+    --brown-light: rgb(162, 132, 94);
+
+    --cyan-dark: rgb(100, 210, 255);
+    --cyan-light: rgb(50, 173, 230);
+
+    --green-dark: rgb(48, 209, 88);
+    --green-light: rgb(52, 199, 89);
+
+    --indigo-dark: rgb(94, 92, 230);
+    --indigo-light: rgb(88, 86, 214);
+
+    --mint-dark: rgb(102, 212, 207);
+    --mint-light: rgb(0, 199, 190);
+
+    --orange-dark: rgb(255, 159, 10);
+    --orange-light: rgb(255, 149, 0);
+
+    --pink-dark: rgb(255, 55, 95);
+    --pink-light: rgb(255, 45, 85);
+
+    --purple-dark: rgb(191, 90, 242);
+    --purple-light: rgb(175, 82, 222);
+
+    --red-dark: rgb(255, 69, 58);
+    --red-light: rgb(255, 59, 48);
+
+    --teal-dark: rgb(64, 200, 224);
+    --teal-light: rgb(48, 176, 199);
+
+    --yellow-dark: rgb(255, 214, 10);
+    --yellow-light: rgb(255, 204, 0);
+}
+
+body{
+    display: flex;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+
+    font-family: Inter;
+    color: var(--dark-layer-1);
+    background-color: var(--light-layer-1);
+    /* background-color: var(--light-layer-1); */
+
+    /* overflow: hidden ; */
+}
+
+.main{
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+
+    padding: 30px;
+
+
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.bus-card-all{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    min-width: 100%;
+
+    /* padding: 30px; */
+    
+    text-transform: capitalize;
+    /* border-radius: 15px; */
+    /* overflow: hidden; */
+
+}
+
+.back-button{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    /* background-color: blue; */
+}
+.back-button-icon{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    height: 30px;
+    width: 30px;
+    fill: var(--blue-light);
+}
+
+
+.bus-card{
+    display: flex;
+    position: relative;
+    /* justify-content: center; */
+    align-items: center;
+
+    padding: 20px;
+    border-radius: 15px;
+
+    /* flex-direction: column; */
+
+    /* width: 100vw; */
+    /* height: 100vh; */
+    transition: all 0.3s;
+    transition-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
+
+    background-color: var(--light-layer-0);
+}
+.bus-card:active{
+    transition: background-color 0.05s, scale 0.5s 0.5s;
+    background-color: var(--light-layer-2);
+    scale: 0.95;
+}
+.bus-no-container{
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+
+    background-color: var(--red-light);
+
+    padding: 10px;
+}
+
+
+.bus-no{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    padding: 3px;
+    color: var(--dark-layer-1);
+    background-color: var(--white-100);
+    width: 100%;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.eta{
+    text-transform: none;
+}
+
+.spacer-x{
+    flex-grow: 1;
+}
+
+
+
+
+
+
+.line{
+    display: flex;
+    position: relative;
+
+    /* margin-right: 30px; */
+
+    height: 5px;
+    /* background-color: var(--light-layer-1-20); */
+}
+
+.bus-info{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+
+    margin-left: 20px;
+
+
+    /* background-color: blue; */
+}
+
+.bus-dest{
+    font-size: 16px;
+    font-weight: 500;
+    /* color: black; */
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    body{
+        color: white;
+        background-color: var(--dark-layer-0);
+    }
+    .bus-card-all{
+    }
+    .bus-card{
+        background-color: var(--dark-layer-1);
+    }
+    .bus-card:active{
+        background-color: var(--dark-layer-3);
+    }
+}
