@@ -10,6 +10,8 @@ function getRouteList() {
 
 
     var api = `https://data.etabus.gov.hk/v1/transport/kmb/route/`;
+    // var api = `https://rt.data.gov.hk/v1/transport/citybus-nwfb/route/ctb`;
+    // var api = `https://rt.data.gov.hk/v1/transport/citybus-nwfb/route/nwfb`;
 
     fetch(api)
         .then(response => response.json())
