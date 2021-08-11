@@ -167,8 +167,8 @@ body{
     align-items: center;
     justify-content: center;
 
-    height: 40px;
-    width: 40px;
+    min-height: 40px;
+    min-width: 40px;
     border-radius: 100%;
 
     background-color: var(--red-light);
@@ -241,12 +241,16 @@ body{
         color: white;
         background-color: var(--dark-layer-0);
     }
-    .bus-card-all{
-    }
     .bus-card{
         background-color: var(--dark-layer-1);
     }
     .bus-card:active{
         background-color: var(--dark-layer-3);
+    }
+}
+
+@media(max-width: 450px){
+    .main{
+        padding: 20px;
     }
 }
