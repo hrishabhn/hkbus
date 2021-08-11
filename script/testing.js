@@ -14,7 +14,7 @@ function getRouteList() {
 
 
 
-    var api = `https://data.etabus.gov.hk/v1/transport/kmb/route/`;
+    var api = `https://data.etabus.gov.hk/v1/transport/kmb/route`;
     // var api = `https://rt.data.gov.hk/v1/transport/citybus-nwfb/route/ctb`;
     // var api = `https://rt.data.gov.hk/v1/transport/citybus-nwfb/route/nwfb`;
 
@@ -31,7 +31,7 @@ function routeFilter() {
     var filter = document.getElementById('filterInput').value.toUpperCase()
     var buses = document.getElementById('buses')
     var li = buses.getElementsByTagName('li')
-    console.log(li)
+    // console.log(li)
 
 
     for (i = 0; i < li.length; i++) {
