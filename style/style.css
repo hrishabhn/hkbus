@@ -305,6 +305,6 @@ li{
 
 @media(max-width: 450px){
     .main{
-        padding: 20px;
+        padding: 60px 20px;
     }
 }
