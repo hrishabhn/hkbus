@@ -173,7 +173,7 @@ body{
 
     background-color: var(--red-light);
 
-    padding: 10px;
+    padding: 8px;
 }
 
 
@@ -191,7 +191,7 @@ body{
     width: 100%;
 
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .eta{
