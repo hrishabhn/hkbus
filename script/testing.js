@@ -4,7 +4,6 @@ function load() {
     getRouteList()
 }
 
-
 function getRouteList() {
     // var stop1 = "466111DE1A3E4656"
     // var route = "961"
@@ -20,11 +19,7 @@ function getRouteList() {
 
     fetch(api)
         .then(response => response.json())
-        .then(data => {
-            // console.log(data)
-            fetchedRoutes = data
-            routeListProcess(fetchedRoutes)
-        })
+        .then(data => { routeListProcess(data) })
 }
 
 function routeFilter() {
@@ -42,7 +37,7 @@ function routeFilter() {
         } else {
             li[i].style.display = "none";
         }
-  }
+    }
 }
 
 function routeListProcess(fetchedRoutes) {
@@ -116,7 +111,7 @@ async function stopListProcess(fetchedStops, route, service_type, bound, dest) {
         stopAll[i] = fetchedStops["data"][i]["stop"]
     }
 
-    
+
 
     // console.log(stopAll)
     // console.log(route)
@@ -157,7 +152,7 @@ async function stopListProcess(fetchedStops, route, service_type, bound, dest) {
                     for (j = 0; good; j++) {
                         // console.log(bound)
                         // console.log(data['data'][j]['dir'])
-    
+
                         if (bound == data['data'][j]['dir']) {
                             good = false
                             // console.log("noop")
@@ -166,19 +161,19 @@ async function stopListProcess(fetchedStops, route, service_type, bound, dest) {
                             // console.log(k)
                             // console.log("oop")
                         }
-    
+
                     }
-    
+
                     // console.log(k)
                     eta1All[i] = Date.parse(data['data'][k]['eta'])
                     eta1All[i] = (eta1All[i] - new Date()) / 60000
                     eta1All[i] = Math.round(eta1All[i])
-    
+
                     if (eta1All[i] < 1) {
                         eta1All[i] = "Now"
                     }
-    
-    
+
+
                     // console.log(data['data'])
                     // console.log(eta1All[i])
                     // fetchedRoutes = data
@@ -196,7 +191,7 @@ async function stopListProcess(fetchedStops, route, service_type, bound, dest) {
 
 
 
-    
+
 
     for (i = 0; i < dataLength; i++) {
         stopsHTML = `${stopsHTML}<li><div class="line"></div><a class="bus-card"><div class="stop-name">${stopName[i]}</div><div class="spacer-x"></div><div class="eta">${eta1All[i]}</div></a></li>`
@@ -204,7 +199,7 @@ async function stopListProcess(fetchedStops, route, service_type, bound, dest) {
 
     document.getElementById("buses").innerHTML = stopsHTML
 
-    
+
 
 
 
